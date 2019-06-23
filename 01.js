@@ -1,21 +1,17 @@
 const app = new Vue({
   el: '#app',
   data: {
-    mensaje: 'hola soy bluuweb',
-    contador: 0
+    saludo: "Soy el ciclo de vida de Vue"
   },
   methods: {
+    destruir() {
+      this.$destroy();
+    }
   },
   computed: {
-    invertido() {
-      return this.mensaje.split('').reverse().join('');
-    },
-    color() {
-      return {
-        'bg-success' : this.contador <= 10,
-        'bg-warning' : this.contador > 10 && this.contador <= 20,
-        'bg-danger'  : this.contador > 20
-      }
-    }
+
+  },
+  beforeCreate() {
+    console.log('beforeCreate')
   }
 })
